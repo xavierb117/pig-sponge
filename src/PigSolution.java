@@ -64,16 +64,6 @@
 
  public class PigSolution {
 
-  // Main method to run the test cases
-  public static void main(String[] args) {
-      // Test cases
-      assertEqual(1, pigLatin("something"), "omethingsay");
-      assertEqual(2, pigLatin("awesome"), "awesome");
-      assertEqual(3, pigLatin("latin is a hard language"), "atinlay is a ardhay anguagelay");
-      assertEqual(4, pigLatin("y"), "yay");
-      assertEqual(5, pigLatin("e"), "e");
-  }
-
    /*
     * Create a method that takes a string consisting of one or more 
     * all-lowercase words separated by spaces. It should return a new string 
@@ -89,6 +79,15 @@
     * pigLatin("y")  should return "yay"
     * pigLatin("e")   should return "e"
     */
+  public static void main(String[] args) {
+    // Test cases
+    assertEqual(1, pigLatin("something"), "omethingsay");
+    assertEqual(2, pigLatin("awesome"), "awesome");
+    assertEqual(3, pigLatin("latin is a hard language"), "atinlay is a ardhay anguagelay");
+    assertEqual(4, pigLatin("y"), "yay");
+    assertEqual(5, pigLatin("e"), "e");
+  }
+
   public static String pigLatin(String sentence) {
       // Split the sentence into words
       String[] words = sentence.split(" ");
@@ -96,9 +95,9 @@
       String result = "";
 
       // Loop through each word in the sentence
-      for (int i = 0; i < words.length; i++) {
+      for (String word : words) {
           // Convert the word to Pig Latin and add it to the result
-          result += pigLatinSingleWord(words[i]);
+          result += pigLatinSingleWord(word);
           result += " ";
       }
 
@@ -120,6 +119,62 @@
       // If it starts with a consonant, move the first letter to the end and add "ay"
       return word.substring(1) + word.charAt(0) + "ay";
   }
+
+
+
+   /*
+    * ***NOTES TO INTERVIEWER***
+    *
+    * ---------Answers to clarifying questions----------
+    * Q: What should I do if the string is empty or null?
+    * A: You do not need to worry about this case. You can assume the input will 
+    *    be a string with at least one letter in it.
+    *
+    * Q: How should I handle capital letters?
+    * A: You can assume the input will not have any capital letters.
+    *
+    * Q: What should I do with punctuation, numbers, etc.?
+    * A: You can assume the input will include only letters and spaces.
+    *
+    * Q: What should I do if there's extra spaces?
+    * A: You can assume there will be exactly one space in between words and no 
+    *    extra spaces at the beginning or end of the string.
+    * --------------------------------------------------
+    *
+    * ---------Hints for struggling candidates----------
+    *
+    *  - If your candidate struggles with an initial algorithm, encourage them 
+    *    to walk through an example and describe how they would do it using only 
+    *    pen and paper.
+    *
+    *  - If they're having trouble determining how to handle multiple words, 
+    *    encourage them to first write code to solve the case where there's only 
+    *    a single word in the string.
+    *
+    *  - If they're having trouble determining how to check if a word starts with 
+    *    a vowel, encourage them to ignore the vowel condition at first, and 
+    *    alter all words.
+    *
+    *  - Remeber that Strings should have double quotes and chars should have single quotes
+    *
+    *  - If your candidate is struggling to convert a single word, ask them to do 
+    *    it step by step. Ask them the followeing questions. If they don't know the Java
+    *    syntax for it, tell them they can search for it online.
+    *    - How do you get the first letter of a string?
+    *    - How do you remove the first letter from a string?
+    *    - How do you add letters to the end of a string?
+    *
+    *  - If it looks like test cases should be passing but they aren't double check 
+    *    whether there is an extra space at the end of their output.
+    * -------------------------------------------------
+    *
+    * Extra notes:
+    * There are more ways to do this! In particular, using a StringBuilder is much more efficient than
+    * repeatedly adding strings together. Learn more about StringBuilder here
+    *   https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
+    */
+
+
 
   // Method to help with testing, you do not need to read this.
   public static void assertEqual(int testNumber, String actual, String expected) {

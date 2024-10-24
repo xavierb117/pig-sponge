@@ -1,74 +1,4 @@
-/**
- * 
- * ONLY LOOK AT THIS FILE IF YOU ARE ASSIGNED
- * TO PRESENT (BE THE INTERVIEWER FOR) SPONGE.
- * 
- * 
- * Guide is way at the bottom.
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class SpongeSolution {
+public class Sponge {
 
   /*
    * Create a method that takes a string consisting of one or more words 
@@ -94,46 +24,7 @@ public class SpongeSolution {
   }
 
   public static String spongeCase(String sentence) {
-    // Split the sentence into words
-    String[] words = sentence.split(" ");
-    // Initialize the result as an empty string
-    String result = "";
-
-    // Loop through each word in the sentence
-    for (String word : words) {
-      // Convert the word to sponge case and add it to the result
-      result += spongeSingleWord(word);
-      result += " ";
-    }
-
-    // Remove the extra space at the end
-    result = result.substring(0, result.length() - 1);
-
-    return result;
-  }
-
-  // Helper method to convert a single word to sponge case
-  // The word starts with a lowercase letter, and alternates between
-  // upper and lower case for each following letter.
-  private static String spongeSingleWord(String word) {
-    String newWord = "";
-    // Toggle this variable to alternate between lower and upper case
-    boolean lower = true;
-
-    // Loop through each letter in the word
-    for (char letter : word.toCharArray()) {
-      if (lower) {
-        // Add the lowercase version of the letter
-        newWord += Character.toLowerCase(letter);
-      } else {
-        // Add the uppercase version of the letter
-        newWord += Character.toUpperCase(letter);
-      }
-      // Flip the toggle
-      lower = !lower;
-    }
-
-    return newWord;
+    return null;
   }
 
   /*
@@ -195,4 +86,3 @@ public class SpongeSolution {
     }
   }
 }
-

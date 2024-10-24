@@ -124,7 +124,7 @@
     word = word.substring(1);
     // Move the old first letter to the end
     word = word + firstLetter; 
-    
+
     // Add "ay" to the end
     return word + "ay";
   }
@@ -187,7 +187,7 @@
 
   // Method to help with testing, you do not need to read this.
   public static void assertEqual(int testNumber, String actual, String expected) {
-    if (!actual.equals(expected)) {
+    if (!expected.equals(actual)) {
       System.out.println("Test " + testNumber + " failed! Expected: '" + expected + "', but got: '" + actual + "'");
     } else {
       System.out.println("Test " + testNumber + " passed!");

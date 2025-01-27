@@ -1,7 +1,7 @@
 public class Pig {
 
     /*
-    * Create a method that takes a string consisting of one or more 
+    * Create a method "pigLatin" that takes a string consisting of one or more 
     * all-lowercase words separated by spaces. It should return a new string 
     * converted to "pig Latin," where each word has its first letter moved to 
     * the back and the letters "ay" are added to the end of the word. However, 

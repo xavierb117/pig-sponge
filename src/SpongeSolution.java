@@ -145,7 +145,9 @@ public class SpongeSolution {
    *    be a string with at least one letter in it.
    *
    * Q: What should I do with punctuation, numbers, etc.?
-   * A: You can assume the input will include only letters and spaces.
+   * A: You can assume the input will include only letters and spaces. They will
+   *    all be within the extended ASCII block. However, accented characters
+   *    should remain accented.
    *
    * Q: What should I do if there's extra spaces?
    * A: You can assume there will be exactly one space in between words and no 

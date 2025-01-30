@@ -84,6 +84,12 @@ public class SpongeSolution {
    * spongeCase("debí tirar más fotos") should return dEbÍ tIrAr mÁs fOtOs" (note the accents)
    * spongeCase("E")  should return "e"
    * spongeCase("e")  should return "e"
+   * 
+   * Hints:
+   * There exist the following methods in java:
+   * Character.toUpperCase() (e.g. Character.toUpperCase('f'))
+   * Character.toLowerCase() (e.g. Character.toLowerCase('Q'))
+   * .toCharArray() String method (e.g. myString.toCharArray())
    */
   public static void main(String[] args) {
     // Test cases
@@ -167,11 +173,13 @@ public class SpongeSolution {
    *    a single word in the string.
    * 
    *  - If they're having trouble determining how to loop over every character in a String,
-   *    encourage them to look up how to do that online.
+   *    direct them to the hint about toCharArray
    *
    *  - If they're having trouble determining how to convert a single character to upper 
-   *    or lower case, encourage them to look up how to do that online. Note that
-   *    it's different to convert a String to upper case vs a single character.
+   *    or lower case, direct them to the hint about toUpperCase/toLowerCase. However, note that
+   *    it's different to convert a String to upper case vs a single character. If they're
+   *    wanting to convert a String instance instead of a char, encourage them to look up
+   *    how to do so online.
    *
    *  - If your candidate is struggling with test case #3, remind them that the 
    *    question states that every word starts with a lowercase letter.

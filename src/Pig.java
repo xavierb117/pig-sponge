@@ -24,9 +24,46 @@ public class Pig {
         assertEqual(5, pigLatin("e"), "e");
     }
 
+    /*
+     * String pigLatin = "";
+     * String[] words = sentence.split(" ");
+     * for (int i = 0; i < words.length; i++) {
+     *     if (words[i].charAt(0) == 'a' || ...) {
+     *        String vowel = words[i].charAt(0) + "";
+     *        for (int j = 0; j < words[i].length() - 1; j++) {
+     *            words[i].charAt(j) = words[i].charAt(j) + 1;
+     *        }
+     *        words[i] = words[i] + vowel + "ay";
+     *     }
+     *     pigLatin += words[i];
+     * }
+     */
+
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+        String pigLatin = "";
+        String[] words = sentence.split(" ");
+        int arrLength = words.length;
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].charAt(0) != 'a' && words[i].charAt(0) != 'e' 
+                && words[i].charAt(0) != 'i' && words[i].charAt(0) != 'o' 
+                && words[i].charAt(0) != 'u') {
+
+                String nonVowel = words[i].charAt(0) + "";
+                
+                words[i] = words[i].substring(1, words[i].length()) + nonVowel + "ay";
+            }
+            
+            if (arrLength > 1) {
+                pigLatin += words[i] + " ";
+                arrLength = arrLength - 1;
+            }
+            else {
+                pigLatin += words[i];
+            }
+        }
+        return pigLatin;
     }
 
 

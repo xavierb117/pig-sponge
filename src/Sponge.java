@@ -31,9 +31,40 @@ public class Sponge {
     assertEqual(6, spongeCase("e"), "e");
   }
 
+   /*
+     * String result = ""
+     * char[] chars = sentence.toCharArray();
+     * for-loop i = 1; i < chars.length; i++
+     * if i is odd, capitalize, if even lowercase
+     * add char to result + ""
+     * once done, return result
+     */
+
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+    String result = "";
+    String[] words = sentence.split(" ");
+    int wordsLength = words.length;
+
+    for (String word : words) {
+      boolean lowerAndUpper = true;
+      for (char letter : word.toCharArray()) {
+        if (lowerAndUpper == true) {
+          String stringLetter = letter + "";
+          result += stringLetter.toLowerCase();
+        }
+        else {
+          String stringLetter = letter + "";
+          result += stringLetter.toUpperCase();
+        }
+        lowerAndUpper = !lowerAndUpper;
+      }
+      if (wordsLength > 1) {
+        result += " ";
+        wordsLength = wordsLength - 1;
+      }
+    }
+    return result;
   }
 
 
